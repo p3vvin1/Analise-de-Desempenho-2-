@@ -46,7 +46,7 @@ def run_sorting_algorithm(algorithm, numbers):
     current_memory, peak_memory = tracemalloc.get_traced_memory()
     tracemalloc.stop()
 
-    execution_time = round((end_time - start_time) * 10, 2)  # Tempo em ms
+    execution_time = round((end_time - start_time), 5)  # Tempo em segundos
     memory_usage = round(peak_memory / 1024, 2)  # Memória em KB
 
     return sorted_numbers, execution_time, memory_usage
@@ -64,8 +64,8 @@ def main():
     save_numbers(sorted_quick, "arq-saida-quick.txt")
 
     print("\nConfiguração do sistema: Ryzen 7 4000 series, 16GB RAM, SSD 256GB")
-    print(f"Bubble Sort -> Tempo: {time_bubble} ms | Memória: {memory_bubble} KB | Saída: arq-saida-bubble.txt")
-    print(f"Quick Sort -> Tempo: {time_quick} ms | Memória: {memory_quick} KB | Saída: arq-saida-quick.txt")
+    print(f"Bubble Sort -> Tempo: {time_bubble} s | Memória: {memory_bubble} KB | Saída: arq-saida-bubble.txt")
+    print(f"Quick Sort -> Tempo: {time_quick} s | Memória: {memory_quick} KB | Saída: arq-saida-quick.txt")
 
 if __name__ == "__main__":
     main()
