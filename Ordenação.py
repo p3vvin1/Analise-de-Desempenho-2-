@@ -43,7 +43,7 @@ def run_sorting_algorithm(algorithm, numbers):
     sorted_numbers = algorithm(numbers.copy())
 
     end_time = time.time()
-    current_memory, peak_memory = tracemalloc.get_traced_memory()
+    peak_memory = tracemalloc.get_traced_memory()
     tracemalloc.stop()
 
     execution_time = round((end_time - start_time), 5)  # Tempo em segundos
